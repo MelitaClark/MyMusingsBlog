@@ -24,51 +24,21 @@
         }
         /* Animated Header Styles */
         h2 {
-          overflow: hidden; /* Ensures the content is not revealed until the animation */
-          border-right: 0.15em solid orange; /* The typwriter cursor */
-          white-space: nowrap; /* Keeps the content on a single line */
-          margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-          letter-spacing: 0.15em; /* Adjust as needed */
-          animation: typing 3.5s steps(40, end),
-            blink-caret 0.75s step-end infinite;
-            color: white;
-            padding-top: 3%;
-            padding-bottom: 1%;
-            font-weight: bolder;
-            font-size: 2.5em;
-            font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
-           
-
+          color: white;
+          padding-top: 3%;
+          padding-bottom: 1%;
+          font-weight: bolder;
+          font-size: 2.5em;
+          font-family: Lucida Sans Typewriter, Lucida Console, monaco,
+            Bitstream Vera Sans Mono, monospace;
         }
-
-        /* The typing effect */
-        @keyframes typing {
-          from {
-            width: 0;
-          }
-          to {
-            width: 25%;
-          }
-        }
-
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-          from,
-          to {
-            border-color: transparent;
-          }
-          50% {
-            border-color: orange;
-          }
-        }
-        /* End Of Animated Header Styles */
 
         /*blogPost Styles*/
-        #blogPost1{
-            padding: 8%;
-            overflow: scroll;
+        #blogPost1 {
+          padding: 8%;
+          overflow: scroll;
         }
-         /*End Of blogPost Styles*/
+        /*End Of blogPost Styles*/
 
         label {
           text-align: center;
@@ -88,6 +58,13 @@
         .column {
           float: left;
           width: 25%;
+        }
+
+        @media only screen and (max-width: 620px) {
+          /* For mobile phones: */
+          .column {
+            width: 100%;
+          }
         }
 
         /* The Modal (background) */
@@ -208,16 +185,28 @@
         }
       </style>
       <body>
-        <h2 class="typewriter" style="text-align:center">Melita's Musings</h2>
+        <h2 class="typewrite" style="text-align:center">
+          <a
+            href=""
+            style="color:white"
+            class="typewrite"
+            data-period="2000"
+            data-type='[ "Hi, Welcome To Melitas Musings.", "This Is My Blog.", "I Write About Culture.", "Click On The Images And Enjoy!" ]'
+          >
+            <span class="wrap"></span>
+          </a>
+        </h2>
 
         <div class="row">
           <div class="column">
-            <img
-              src="freebird2.jpeg"
-              style="width:100%"
-              onclick="openModal();currentSlide(1)"
-              class="hover-shadow cursor"
-            />
+            <div id="container">
+              <img
+                src="freebird2.jpeg"
+                style="width:100%"
+                onclick="openModal();currentSlide(1)"
+                class="hover-shadow cursor"
+              />
+            </div>
             <label for="text">Forgiveness Blog Post (click image)</label>
           </div>
           <div class="column">
@@ -231,7 +220,7 @@
           </div>
           <div class="column">
             <img
-              src="img_mountains.jpg"
+              src="road.jpeg"
               style="width:100%"
               onclick="openModal();currentSlide(3)"
               class="hover-shadow cursor"
@@ -239,7 +228,7 @@
           </div>
           <div class="column">
             <img
-              src="img_lights.jpg"
+              src="jump.jpeg"
               style="width:100%"
               onclick="openModal();currentSlide(4)"
               class="hover-shadow cursor"
@@ -251,14 +240,13 @@
           <span class="close cursor" onclick="closeModal()">&times;</span>
           <div class="modal-content">
             <div class="mySlides">
-            
               <section id="blogPost1">
-                  <h1 style="text-align:center">Forgiveness</h1>
-                 You have undeservingly allowed yourself to actually
-                walk a mile in someone else’s shoes and now it’s time to take
-                those shoes off! Forgive, pardon, excuse, exonerate... Two
-                people stand alone in a room. They exchange apologies for hurts
-                passed between them. They embrace, smile and all is forgiven,
+                <h1 style="text-align:center">Forgiveness</h1>
+                You have undeservingly allowed yourself to actually walk a mile
+                in someone else’s shoes and now it’s time to take those shoes
+                off! Forgive, pardon, excuse, exonerate... Two people stand
+                alone in a room. They exchange apologies for hurts passed
+                between them. They embrace, smile and all is forgiven,
                 forgotten. How often is this the truth of the process of
                 forgiveness. For a long while I have tussled with forgiveness. I
                 found that once I truly wanted to forgive, I didn’t
@@ -371,49 +359,53 @@
             </div>
 
             <div class="mySlides">
-              <div class="numbertext">2 / 4</div>
               <section id="blogPost2">
-                    <h1 style="text-align:center">Religion: Let It Heal Not Divide</h1>
-                    “If the concept of God has any validity or any use, it can only be to make us larger, freer, and more loving. If God cannot do this, then it is time we got rid of Him.”
-                James Baldwin, The Fire Next Time
+                <h1 style="text-align:center">
+                  Religion: Let It Heal Not Divide
+                </h1>
+                “If the concept of God has any validity or any use, it can only
+                be to make us larger, freer, and more loving. If God cannot do
+                this, then it is time we got rid of Him.” James Baldwin, The
+                Fire Next Time
                 <ul>
-
-                <li>Judaism<li>
-                <li>Hinduism </li>
-                <li>Christianity </li>
-                <li>Islam</li>
-                <li>Buddhism</li>
-                <li>Catholic </li>
-                <li>Protestantism</li>
-                <li>>New Age</li>
-                <li>Paganism</li>
-                <li>Lutheranism</li>
-                <li>Mormonism</li>
-                <li>etc.</li>
+                  <li>Judaism</li>
+                  <li>Hinduism</li>
+                  <li>Christianity</li>
+                  <li>Islam</li>
+                  <li>Buddhism</li>
+                  <li>Catholic</li>
+                  <li>Protestantism</li>
+                  <li>New Age</li>
+                  <li>Paganism</li>
+                  <li>Lutheranism</li>
+                  <li>Mormonism</li>
+                  <li>etc.</li>
                 </ul>
 
-Which of these ways is right? Which of these is “saved”? If you belong to one of these, you may be inclined to feel superior to the others or perhaps a pious pity for those “lost” souls going astray. But, what does not bring us together can tend to separate us if we are not aware.
-
-Religion drives our behavior, impacts our Conscience and dictates our world views. In this way, it seems that religion can be a powerful healer and motivator for our souls.
-
- Likewise, the pendulum can swing and when our religious beliefs clash with the beliefs/worldview of others, it may separate us on a very deep, soul level.
-
-
-As stated by leaders like Martin Luther King Jr or James Baldwin, “
-the most segregated hour in American life is high noon on Sunday.” 
-
-Of course, these leaders were speaking to the racial divide at the time. But as the Christian, the Muslim, the Lutheran skerry to their separate places of worship 
-</section>
+                Which of these ways is right? Which of these is “saved”? If you
+                belong to one of these, you may be inclined to feel superior to
+                the others or perhaps a pious pity for those “lost” souls going
+                astray. But, what does not bring us together can tend to
+                separate us if we are not aware. Religion drives our behavior,
+                impacts our Conscience and dictates our world views. In this
+                way, it seems that religion can be a powerful healer and
+                motivator for our souls. Likewise, the pendulum can swing and
+                when our religious beliefs clash with the beliefs/worldview of
+                others, it may separate us on a very deep, soul level. As stated
+                by leaders like Martin Luther King Jr or James Baldwin, “ the
+                most segregated hour in American life is high noon on Sunday.”
+                Of course, these leaders were speaking to the racial divide at
+                the time. But as the Christian, the Muslim, the Lutheran skerry
+                to their separate places of worship
+              </section>
             </div>
 
             <div class="mySlides">
-              <div class="numbertext">3 / 4</div>
-              <img src="img_mountains_wide.jpg" style="width:100%" />
+              <img src="road.jpeg" style="width:100%" />
             </div>
 
             <div class="mySlides">
-              <div class="numbertext">4 / 4</div>
-              <img src="img_lights_wide.jpg" style="width:100%" />
+              <img src="jump.jpeg" style="width:100%" />
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -426,7 +418,7 @@ Of course, these leaders were speaking to the racial divide at the time. But as 
             <div class="column">
               <img
                 class="demo cursor"
-                src="img_nature_wide.jpg"
+                src="freebird2.jpeg"
                 style="width:100%"
                 onclick="currentSlide(1)"
                 alt="Forgiveness BlogPost"
@@ -435,7 +427,7 @@ Of course, these leaders were speaking to the racial divide at the time. But as 
             <div class="column">
               <img
                 class="demo cursor"
-                src="img_snow_wide.jpg"
+                src="religion.jpeg"
                 style="width:100%"
                 onclick="currentSlide(2)"
                 alt="Religion"
@@ -444,7 +436,7 @@ Of course, these leaders were speaking to the racial divide at the time. But as 
             <div class="column">
               <img
                 class="demo cursor"
-                src="img_mountains_wide.jpg"
+                src="road.jpeg"
                 style="width:100%"
                 onclick="currentSlide(3)"
                 alt="Mountains and fjords"
@@ -453,7 +445,7 @@ Of course, these leaders were speaking to the racial divide at the time. But as 
             <div class="column">
               <img
                 class="demo cursor"
-                src="img_lights_wide.jpg"
+                src="jump.jpeg"
                 style="width:100%"
                 onclick="currentSlide(4)"
                 alt="Northern Lights"
@@ -506,5 +498,10 @@ Of course, these leaders were speaking to the racial divide at the time. But as 
         </script>
       </body>
     </html>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script src="my.js"></script>
   </body>
 </html>
