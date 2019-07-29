@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Melita's Blog</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <style>
+        body {
+          font-family: Verdana, sans-serif;
+          margin: 0;
+          background: #e8f2ef;
+          background-image: url("zenbg-1.png"), url("zenbg-2.png");
+          background-repeat: repeat-x, repeat;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+        /* Animated Header Styles */
+        h2 {
+          overflow: hidden; /* Ensures the content is not revealed until the animation */
+          border-right: 0.15em solid orange; /* The typwriter cursor */
+          white-space: nowrap; /* Keeps the content on a single line */
+          margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+          letter-spacing: 0.15em; /* Adjust as needed */
+          animation: typing 3.5s steps(40, end),
+            blink-caret 0.75s step-end infinite;
+            color: white;
+            padding-top: 3%;
+            padding-bottom: 1%;
+            font-weight: bolder;
+            font-size: 2.5em;
+            font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+           
+
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+          to {
+            width: 25%;
+          }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+          from,
+          to {
+            border-color: transparent;
+          }
+          50% {
+            border-color: orange;
+          }
+        }
+        /* End Of Animated Header Styles */
+
+        /*blogPost Styles*/
+        #blogPost1{
+            padding: 8%;
+            overflow: scroll;
+        }
+         /*End Of blogPost Styles*/
+
+        label {
+          text-align: center;
+          background: black;
+          color: white;
+        }
+        .row > .column {
+          padding: 0 8px;
+        }
+
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .column {
+          float: left;
+          width: 25%;
+        }
+
+        /* The Modal (background) */
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          padding-top: 100px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: black;
+        }
+
+        /* Modal Content */
+        .modal-content {
+          position: relative;
+          background-color: #fefefe;
+          margin: auto;
+          padding: 0;
+          width: 90%;
+          max-width: 1200px;
+        }
+
+        /* The Close Button */
+        .close {
+          color: white;
+          position: absolute;
+          top: 10px;
+          right: 25px;
+          font-size: 35px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #999;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .mySlides {
+          display: none;
+        }
+
+        .cursor {
+          cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -50px;
+          color: white;
+          font-weight: bold;
+          font-size: 20px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+          -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+
+        img {
+          margin-bottom: -4px;
+        }
+
+        .caption-container {
+          text-align: center;
+          background-color: black;
+          padding: 2px 16px;
+          color: white;
+        }
+
+        .demo {
+          opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+          opacity: 1;
+        }
+
+        img.hover-shadow {
+          transition: 0.3s;
+        }
+
+        .hover-shadow:hover {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+      </style>
+      <body>
+        <h2 class="typewriter" style="text-align:center">Melita's Musings</h2>
+
+        <div class="row">
+          <div class="column">
+            <img
+              src="freebird2.jpeg"
+              style="width:100%"
+              onclick="openModal();currentSlide(1)"
+              class="hover-shadow cursor"
+            />
+            <label for="text">Forgiveness Blog Post (click image)</label>
+          </div>
+          <div class="column">
+            <img
+              src="religion.jpeg"
+              style="width:100%"
+              onclick="openModal();currentSlide(2)"
+              class="hover-shadow cursor"
+            />
+            <label for="text">Religion Blog Post (click image)</label>
+          </div>
+          <div class="column">
+            <img
+              src="img_mountains.jpg"
+              style="width:100%"
+              onclick="openModal();currentSlide(3)"
+              class="hover-shadow cursor"
+            />
+          </div>
+          <div class="column">
+            <img
+              src="img_lights.jpg"
+              style="width:100%"
+              onclick="openModal();currentSlide(4)"
+              class="hover-shadow cursor"
+            />
+          </div>
+        </div>
+
+        <div id="myModal" class="modal">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+            <div class="mySlides">
+            
+              <section id="blogPost1">
+                  <h1 style="text-align:center">Forgiveness</h1>
+                 You have undeservingly allowed yourself to actually
+                walk a mile in someone else’s shoes and now it’s time to take
+                those shoes off! Forgive, pardon, excuse, exonerate... Two
+                people stand alone in a room. They exchange apologies for hurts
+                passed between them. They embrace, smile and all is forgiven,
+                forgotten. How often is this the truth of the process of
+                forgiveness. For a long while I have tussled with forgiveness. I
+                found that once I truly wanted to forgive, I didn’t
+                authentically know how. Sure, I could say I forgive you, but my
+                heart & mind would never get there in time to make the words
+                true. So, how to do this? How to pardon the source of your hurt,
+                pain, struggle. How to let go of something so completely that
+                you feel free from the burden while not simultaneously feeling
+                fear that letting go might be inviting this to happen again or
+                letting the source of your pain off the hook. Then, after a
+                dream I had one night, it hit me - forgiveness is not about
+                letting someone or something off the hook. Forgiveness does not
+                start by looking outside ourselves at all. Forgiveness starts so
+                deep that one might miss it’s origins altogether. Forgiveness
+                starts in recognizing who we were before all the pain -
+                fearless, happy, free of baggage is who we still are and always
+                have been. We have just forgotten. My dream was whimsical and
+                beautiful with an air of the French baroque style although I
+                have never been to France. With ladies of all skin shades
+                looking beautiful and radiant, dressed in ball gowns and high
+                wigs laughing carelessly under gilded gold ceilings that went on
+                forever. As with any dream, the fantasy is hard to put to words.
+                But, at one poignant moment, I remember a great desire to be
+                free and happy, to join in the laughter and the fun, but a
+                feeling of dred swept over me - how could I let go of all my
+                reservations and not make myself voulnerable to more pain? As my
+                dreaming mind pondered over this, a figure also resembling
+                myself appeared. She walked up to me and spoke three invisible
+                words, “Just. Let. Go.” And then she softly yet forcefully
+                pushed me. I fell backwards in slow motion onto a tufted
+                pillowed trampoline like surface. My body made contact with the
+                surface and I was vigorously catapulted into the air. I was
+                flying over everyone and I was laughing. My laughter surprised
+                and delighted me all at once as I floated over a room of
+                laughing women. Then, I looked into my own sleeping soul, the
+                way the cast of the office would look boldly into the invisible
+                cameras and told myself that - I was free! It was just that
+                simple, let go and you are free. Ok, so how does one just let
+                go? In reality, it can seem more complicated. Imagine you are a
+                child of 4 or 5 years and you are becoming conscious of the
+                world around you now. Someone points out a rope attached to a
+                cart. The cart has a single small box on it. So, you decide to
+                pick up the rope and begin dragging the cart behind. At first,
+                your cart feels so light you barely notice it at all. Then, you
+                see boxes from other peoples carts that they have left in your
+                path. Some of these boxes are happy experiences that benefit us.
+                Some boxes are profoundly insightful. Some boxes are filled with
+                pain and abuse. Now, it only makes sense to pickup these boxes
+                left by others and put them into your own cart so you can
+                seemingly clear your path and keep moving forward. After all,
+                some of these boxes hold such good things. After some years,
+                life becomes heavy and you feel that something is weighing you
+                down. You can’t see the rope in your own hands, grasping so
+                tightly as if it was part of you, but you do remember those
+                heavy boxes and the people or events that put them in your path
+                to being with. There is a real resentment, hurt associated with
+                the source of those boxes - if that person didn’t put their box
+                in your path you wouldn’t have had to carry it and your life
+                wouldn’t be so hard. So, we keep ourselves bound to the past, to
+                that person or event that let some of their load spill over into
+                our path. We let someone else’s burdens infect us as if we have
+                no control of what we choose to let burden us, weigh us down. We
+                become an angry, hurt, resentful victim of someone else’s pain.
+                And we hate them for adding that weight to our load. We keep
+                ourselves bound by not seeing that we are holding the rope that
+                pulls our cart and we can decide what is added and what is
+                removed. The boxes that were put in our way by others were never
+                ours to begin with. Yes, perhaps we couldn’t avoid them coming
+                into our space for a time, but it was never demanded that we
+                pick up those boxes and carry them ourselves. We chose to pick
+                them up. We added that pain to our load instead of leaving it
+                behind. Someone or something might have introduced the
+                hurt/fears to us, but it is our own fault for taking ownership.
+                For taking on the bad pieces of others. For forgetting who we
+                truly are. So, forgiveness then would be a conscious
+                understanding that you hold the rope of experiences that have
+                shaped you in your life. And, because you hold this rope, you
+                can control what you choose to carry or not carry. Thus, the
+                pain you are experiencing from the past hurts you carry is not
+                the originators fault, it is yours. You have decided to continue
+                being bound to this person or event because you have mistakenly
+                thought that that experience is who you are, that it is yours.
+                You can not separate your boxes from the boxes you’ve added from
+                others. But once you get up the courage to sort through all
+                these boxes that you have assigned to yourself and peak inside,
+                you can start to let the bad boxes go and give them back to the
+                originator. And, if the origin of that painful box was a family
+                member, a friend, a co-worker, whoever; you can now unbind
+                yourself from them by letting go of their box and giving it back
+                to them. And finally, once you are unbounded from that person’s
+                box, you not only feel freer and more yourself, you can also now
+                look back at that source of the painful box and feel sorry for
+                them or feel empathetic because now you are not carrying their
+                load, but they still may be. You can have compassion because you
+                allowed yourself to take on part of their pain and now that
+                you’ve released them as your source of blame, you can have some
+                degree of understanding that the person who hurt you must have
+                picked up false ownership of that hurt from someone else along
+                the way and you now know how burdensome that feels. You have
+                taken empathy to a whole new level by absorbing someone else’s
+                negative experience and making it your own. You have
+                undeservingly allowed yourself to actually walk a mile in
+                someone else’s shoes and now it’s time to take those shoes off!
+                Now you can absolve that person or event from yourself. You can
+                now forgive what is no longer part of you. And, hey, you may
+                still never want to speak to that person again or become best
+                friends, but you can free them from your rage and resentment.
+                You don’t need to put a bad box in someone else’s path.
+              </section>
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">2 / 4</div>
+              <section id="blogPost2">
+                    <h1 style="text-align:center">Religion: Let It Heal Not Divide</h1>
+                    “If the concept of God has any validity or any use, it can only be to make us larger, freer, and more loving. If God cannot do this, then it is time we got rid of Him.”
+                James Baldwin, The Fire Next Time
+                <ul>
+
+                <li>Judaism<li>
+                <li>Hinduism </li>
+                <li>Christianity </li>
+                <li>Islam</li>
+                <li>Buddhism</li>
+                <li>Catholic </li>
+                <li>Protestantism</li>
+                <li>>New Age</li>
+                <li>Paganism</li>
+                <li>Lutheranism</li>
+                <li>Mormonism</li>
+                <li>etc.</li>
+                </ul>
+
+Which of these ways is right? Which of these is “saved”? If you belong to one of these, you may be inclined to feel superior to the others or perhaps a pious pity for those “lost” souls going astray. But, what does not bring us together can tend to separate us if we are not aware.
+
+Religion drives our behavior, impacts our Conscience and dictates our world views. In this way, it seems that religion can be a powerful healer and motivator for our souls.
+
+ Likewise, the pendulum can swing and when our religious beliefs clash with the beliefs/worldview of others, it may separate us on a very deep, soul level.
+
+
+As stated by leaders like Martin Luther King Jr or James Baldwin, “
+the most segregated hour in American life is high noon on Sunday.” 
+
+Of course, these leaders were speaking to the racial divide at the time. But as the Christian, the Muslim, the Lutheran skerry to their separate places of worship 
+</section>
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">3 / 4</div>
+              <img src="img_mountains_wide.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">4 / 4</div>
+              <img src="img_lights_wide.jpg" style="width:100%" />
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div class="caption-container">
+              <p id="caption"></p>
+            </div>
+
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="img_nature_wide.jpg"
+                style="width:100%"
+                onclick="currentSlide(1)"
+                alt="Forgiveness BlogPost"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="img_snow_wide.jpg"
+                style="width:100%"
+                onclick="currentSlide(2)"
+                alt="Religion"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="img_mountains_wide.jpg"
+                style="width:100%"
+                onclick="currentSlide(3)"
+                alt="Mountains and fjords"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo cursor"
+                src="img_lights_wide.jpg"
+                style="width:100%"
+                onclick="currentSlide(4)"
+                alt="Northern Lights"
+              />
+            </div>
+          </div>
+        </div>
+
+        <script>
+          function openModal() {
+            document.getElementById("myModal").style.display = "block";
+          }
+
+          function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+          }
+
+          var slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides((slideIndex += n));
+          }
+
+          function currentSlide(n) {
+            showSlides((slideIndex = n));
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+              slideIndex = 1;
+            }
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
