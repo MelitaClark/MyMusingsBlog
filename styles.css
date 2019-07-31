@@ -30,6 +30,7 @@ body {
   * {
     box-sizing: border-box;
   }
+  
   /* Animated Header Styles */
   h2 {
     color:black;
@@ -75,6 +76,8 @@ body {
   -webkit-box-shadow: 9px 10px 21px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 9px 10px 21px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 9px 10px 21px -4px rgba(0, 0, 0, 0.75);
+  
+  
 
 }
   label {
