@@ -1,0 +1,218 @@
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+     /* Set a font size */
+  font-size: 16px;
+  
+  /* Begin The Redundancies */
+  background-image: 
+    -webkit-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
+    -webkit-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image: 
+    -moz-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
+    -moz-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image: 
+    -o-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+    -o-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image: 
+    -ms-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+    -ms-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  -webkit-background-size: 100% 2em;
+  -moz-background-size: 100% 2em;
+
+  /* In a perfect world... */
+  background-image: 
+    linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+    linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-size: 100% 2em;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  /* Animated Header Styles */
+  h2 {
+    color:black;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    font-weight: bolder;
+    font-size: 2.5em;
+    font-family: Lucida Sans Typewriter, Lucida Console, monaco,
+      Bitstream Vera Sans Mono, monospace;
+  }
+  /*blogPost Styles*/
+  h1{
+    color: #444;
+    text-shadow: 
+      1px 0px 1px #ccc, 0px 1px 1px #eee, 
+      2px 1px 1px #ccc, 1px 2px 1px #eee,
+      3px 2px 1px #ccc, 2px 3px 1px #eee,
+      4px 3px 1px #ccc, 3px 4px 1px #eee,
+      5px 4px 1px #ccc, 4px 5px 1px #eee,
+      6px 5px 1px #ccc, 5px 6px 1px #eee,
+      7px 6px 1px #ccc;
+  }
+  .blogContent{
+    box-shadow: 0 0 20px  grey;
+    padding: 5%;
+    background: lightgoldenrodyellow;
+  }
+
+  
+  .myPosts {
+    padding: 5%;
+    overflow: scroll;
+    background: rgb(238,227,174);
+    background: radial-gradient(circle, rgba(238,227,174,1) 0%, rgba(148,187,233,1) 100%);
+    
+  }
+  /*End Of blogPost Styles*/
+#container{
+    padding: .5em;
+  margin: 1em;
+  border-radius: 1em;
+  background: #eee;
+  -webkit-box-shadow: 9px 10px 21px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 9px 10px 21px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 9px 10px 21px -4px rgba(0, 0, 0, 0.75);
+
+}
+  label {
+    text-align: center;
+    background: black;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }
+  .row > .column {
+    padding: 0 8px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .column {
+    float: left;
+    width: 25%;
+  }
+
+  @media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .column {
+      width: 100%;
+    }
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  
+
+  img {
+    margin-bottom: -4px;
+  }
+
+  .caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+  }
+
+  .demo {
+    opacity: 0.6;
+  }
+
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }

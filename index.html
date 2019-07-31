@@ -5,185 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Melita's Blog</title>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <!DOCTYPE html>
     <html>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <style>
-        body {
-          font-family: Verdana, sans-serif;
-          margin: 0;
-          background: #353b3a;
-          background-image: url("zenbg-1.png") /*url("zenbg-2.png")*/;
-          background-repeat: repeat-x, repeat;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-        /* Animated Header Styles */
-        h2 {
-          color: white;
-          padding-top: 3%;
-          padding-bottom: 1%;
-          font-weight: bolder;
-          font-size: 2.5em;
-          font-family: Lucida Sans Typewriter, Lucida Console, monaco,
-            Bitstream Vera Sans Mono, monospace;
-        }
-
-        /*blogPost Styles*/
-        #blogPost1 {
-          padding: 8%;
-          overflow: scroll;
-        }
-        /*End Of blogPost Styles*/
-
-        label {
-          text-align: center;
-          background: black;
-          color: white;
-        }
-        .row > .column {
-          padding: 0 8px;
-        }
-
-        .row:after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-
-        .column {
-          float: left;
-          width: 25%;
-        }
-
-        @media only screen and (max-width: 620px) {
-          /* For mobile phones: */
-          .column {
-            width: 100%;
-          }
-        }
-
-        /* The Modal (background) */
-        .modal {
-          display: none;
-          position: fixed;
-          z-index: 1;
-          padding-top: 100px;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          overflow: auto;
-          background-color: black;
-        }
-
-        /* Modal Content */
-        .modal-content {
-          position: relative;
-          background-color: #fefefe;
-          margin: auto;
-          padding: 0;
-          width: 90%;
-          max-width: 1200px;
-        }
-
-        /* The Close Button */
-        .close {
-          color: white;
-          position: absolute;
-          top: 10px;
-          right: 25px;
-          font-size: 35px;
-          font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-          color: #999;
-          text-decoration: none;
-          cursor: pointer;
-        }
-
-        .mySlides {
-          display: none;
-        }
-
-        .cursor {
-          cursor: pointer;
-        }
-
-        /* Next & previous buttons */
-        .prev,
-        .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          padding: 16px;
-          margin-top: -50px;
-          color: white;
-          font-weight: bold;
-          font-size: 20px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-          -webkit-user-select: none;
-        }
-
-        /* Position the "next button" to the right */
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
-
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover,
-        .next:hover {
-          background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Number text (1/3 etc) */
-        .numbertext {
-          color: #f2f2f2;
-          font-size: 12px;
-          padding: 8px 12px;
-          position: absolute;
-          top: 0;
-        }
-
-        img {
-          margin-bottom: -4px;
-        }
-
-        .caption-container {
-          text-align: center;
-          background-color: black;
-          padding: 2px 16px;
-          color: white;
-        }
-
-        .demo {
-          opacity: 0.6;
-        }
-
-        .active,
-        .demo:hover {
-          opacity: 1;
-        }
-
-        img.hover-shadow {
-          transition: 0.3s;
-        }
-
-        .hover-shadow:hover {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-      </style>
+      
       <body>
         <h2 class="typewrite" style="text-align:center">
           <a
@@ -207,26 +35,32 @@
                 class="hover-shadow cursor"
               />
             </div>
-            <label for="text">Forgiveness Blog Post (click image)</label>
+            <label style="text-align: center" for="text">Forgiveness </label>
           </div>
           <div class="column">
+              <div id="container">
             <img
               src="religion.jpeg"
               style="width:100%"
               onclick="openModal();currentSlide(2)"
               class="hover-shadow cursor"
             />
-            <label for="text">Religion Blog Post (click image)</label>
+            </div>
+            <label for="text">Religion </label>
           </div>
           <div class="column">
+              <div id="container">
             <img
               src="road.jpeg"
               style="width:100%"
               onclick="openModal();currentSlide(3)"
               class="hover-shadow cursor"
             />
+            </div>
+            <label for="text">Comming Soon </label>
           </div>
           <div class="column">
+              <div id="container">
             <img
               src="jump.jpeg"
               style="width:100%"
@@ -234,15 +68,16 @@
               class="hover-shadow cursor"
             />
           </div>
+          <label for="text">Comming Soon </label>
         </div>
 
         <div id="myModal" class="modal">
           <span class="close cursor" onclick="closeModal()">&times;</span>
           <div class="modal-content">
             <div class="mySlides">
-              <section id="blogPost1">
+              <section class = "myPosts" id="blogPost1">
                 <h1 style="text-align:center">Forgiveness</h1>
-                You have undeservingly allowed yourself to actually walk a mile
+                <div class= "blogContent">You have undeservingly allowed yourself to actually walk a mile
                 in someone else’s shoes and now it’s time to take those shoes
                 off! Forgive, pardon, excuse, exonerate... Two people stand
                 alone in a room. They exchange apologies for hurts passed
@@ -354,12 +189,12 @@
                 now forgive what is no longer part of you. And, hey, you may
                 still never want to speak to that person again or become best
                 friends, but you can free them from your rage and resentment.
-                You don’t need to put a bad box in someone else’s path.
+                You don’t need to put a bad box in someone else’s path.</div>
               </section>
             </div>
 
             <div class="mySlides">
-              <section id="blogPost2">
+              <section class = "myPosts" id="blogPost2">
                 <h1 style="text-align:center">
                   Religion: Let It Heal Not Divide
                 </h1>
@@ -454,48 +289,7 @@
           </div>
         </div>
 
-        <script>
-          function openModal() {
-            document.getElementById("myModal").style.display = "block";
-          }
-
-          function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-          }
-
-          var slideIndex = 1;
-          showSlides(slideIndex);
-
-          function plusSlides(n) {
-            showSlides((slideIndex += n));
-          }
-
-          function currentSlide(n) {
-            showSlides((slideIndex = n));
-          }
-
-          function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            var captionText = document.getElementById("caption");
-            if (n > slides.length) {
-              slideIndex = 1;
-            }
-            if (n < 1) {
-              slideIndex = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            captionText.innerHTML = dots[slideIndex - 1].alt;
-          }
-        </script>
+       
       </body>
     </html>
     <script
