@@ -60,6 +60,9 @@ window.onload = function() {
   document.body.appendChild(css);
 }; //End typewriter text animations
 
+
+
+
 function openModal() {
   document.getElementById("myModal").style.display = "block";
 }
