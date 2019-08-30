@@ -153,6 +153,7 @@ body {
 
   .mySlides {
     display: none;
+    overflow: scroll;
   }
 
   .cursor {
